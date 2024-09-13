@@ -11,14 +11,18 @@ A seguir, você encontrará o tutorial completo, incluindo links para download e
 ### Download do Adobe Acrobat Reader DC
 
 Baixe a versão corporativa mais recente do **Adobe Acrobat Reader DC** diretamente do site oficial:
-
 [Adobe Acrobat Reader DC](https://get.adobe.com/reader/enterprise/)
+
+### Download do Adobe Customization Wizard (Opcional)
+
+Baixe a versão mais recente do **Adobe Customization Wizard** diretamente do site oficial:
+[Adobe Customization Wizard](https://ardownload3.adobe.com/pub/adobe/acrobat/win/AcrobatDC/misc/CustWiz2200320310_en_US_DC.exe)
 
 ### Documentação Oficial da Adobe
 
 Para mais detalhes sobre a personalização e suporte de instalação via MSI, consulte a documentação oficial:
-
 [Documentação Adobe Acrobat Reader DC](https://www.adobe.com/devnet-docs/acrobatetk/tools/VirtualizationGuide/cmdline.html#msi-support)
+[Documentação Adobe Customization Wizard](https://www.adobe.com/devnet-docs/acrobatetk/tools/Wizard/index.html)
 
 ---
 
