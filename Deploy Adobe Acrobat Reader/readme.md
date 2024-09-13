@@ -1,5 +1,9 @@
-Guilherme Santos, 21/11/2023
+Documentação e Download
 ============================
+Download link:
+Documentação Download: 
+
+Extract 
 Procedimento completo para realizar a criação do arquivo .msi atualizado do Adobe Acrobat Reader.
 
 1) Baixe a versão mais recente em: https://get.adobe.com/br/reader/enterprise/;
