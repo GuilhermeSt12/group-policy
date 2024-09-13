@@ -33,21 +33,21 @@ Para mais detalhes sobre a personalização e suporte de instalação via MSI, c
 - Após o download, extraia o conteúdo do instalador para uma pasta específica. O comando abaixo pode ser utilizado para essa finalidade:
 
 ```bash
-cmd /c D:\Downloads\AcroRdrDC2300320269_en_US.exe -sfx_o"D:\Downloads\Reader" -sfx_ne
+C:\Temp\AcroRdrDC2400320112_pt_BR.exe -sfx_o" C:\Temp\Reader" -sfx_ne
 ```
 
 ### 3. Criar Ponto de Instalação Administrativa
 Após extrair o instalador, você deve criar um ponto de instalação administrativa para facilitar o gerenciamento e implantação do software:
 
 ```bash
-cmd /c msiexec /a "D:\Downloads\Reader\AcroRead.msi" TARGETDIR="D:\Downloads\Reader_deployment"
+cmd /c msiexec /a "C:\Temp\Reader\AcroRead.msi" TARGETDIR="C:\Temp\Reader_deployment"
 ```
 
 ### 4. Atualizar o Ponto de Instalação Administrativa
 Para garantir que a instalação esteja sempre atualizada, aplique as atualizações mais recentes ao ponto de instalação:
 
 ```bash
-cmd /c msiexec /a "D:\Downloads\Reader_deployment\AcroRead.msi" /p "D:\Downloads\Reader\AcroRdrDCUpd2300320269.msp" TARGETDIR="D:\Downloads\Reader_deployment"
+cmd /c msiexec /a "C:\Temp\Reader_deployment\AcroRead.msi" /p "C:\Temp\Reader\AcroRdrDCUpd2300320269.msp" TARGETDIR="C:\Temp\Reader_deployment"
 ```
 
 
