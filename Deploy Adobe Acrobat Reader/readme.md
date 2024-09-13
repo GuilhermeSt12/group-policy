@@ -1,7 +1,9 @@
 Documentação e Download
 ============================
 Download link: [Adobe Acrobat Reader DC](https://get.adobe.com/reader/enterprise/)
+
 Documentação Download: [Documentação](https://www.adobe.com/devnet-docs/acrobatetk/tools/VirtualizationGuide/cmdline.html#msi-support)
+
 
 1) Baixe a versão mais recente;
 2) Extraia para uma nova pasta do executável;
