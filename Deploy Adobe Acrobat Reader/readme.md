@@ -24,7 +24,7 @@ Para mais detalhes sobre a personalização e suporte de instalação via MSI, c
 
 ## **Passo a Passo para criação do Instalador via MSI**
 
-### 1. **Baixe a Versão Mais Recente**
+### 1. **Baixe a Versão Mais Recente**_
 
 - Acesse o link de download acima e faça o download do instalador corporativo do **Adobe Acrobat Reader DC**.
 
@@ -33,7 +33,7 @@ Para mais detalhes sobre a personalização e suporte de instalação via MSI, c
 - Após o download, extraia o conteúdo do instalador para uma pasta específica. O comando abaixo pode ser utilizado para essa finalidade:
 
 ```bash
-"C:\Temp\AcroRdrDC2400320112_pt_BR.exe" -sfx_o "C:\Temp\Reader" -sfx_ne
+cmd /c C:\Temp\AcroRdrDC2400320112_pt_BR.exe -sfx_o "C:\Temp\Reader" -sfx_ne
 ```
 
 ### 3. Criar Ponto de Instalação Administrativa
