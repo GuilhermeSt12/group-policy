@@ -43,17 +43,16 @@ Após extrair o instalador, você deve criar um ponto de instalação administra
 cmd /c msiexec /a "C:\Temp\Reader\AcroRead.msi" TARGETDIR="C:\Temp\Reader_deployment"
 ```
 
+### ** (Opcional) Personalize as Opções de Instalação via Customization Wizard
+Se desejar aplicar configurações específicas, instale o Adobe Customization Wizard. Ele permite personalizar diversas opções antes da implantação via GPO.
+Use o Customization Wizard para desativar atualizações automáticas, configurar políticas de segurança, entre outras opções.
+
 ### 4. Atualizar o Ponto de Instalação Administrativa
 Para garantir que a instalação esteja sempre atualizada, aplique as atualizações mais recentes ao ponto de instalação:
 
 ```bash
 cmd /c msiexec /a "C:\Temp\Reader_deployment\AcroRead.msi" /p "C:\Temp\Reader\AcroRdrDCUpd2400320112.msp" TARGETDIR="C:\Temp\Reader_deployment"
 ```
-
-
-### ** (Opcional) Personalize as Opções de Instalação via Customization Wizard
-Se desejar aplicar configurações específicas, instale o Adobe Customization Wizard. Ele permite personalizar diversas opções antes da implantação via GPO.
-Use o Customization Wizard para desativar atualizações automáticas, configurar políticas de segurança, entre outras opções.
 
 ### 5. Crie a GPO Usando o Arquivo MSI Extraído
 Com as configurações personalizadas criadas no Customization Wizard (caso tenha utilizado), prossiga para a criação da GPO usando o arquivo MSI extraído. O arquivo MSI será utilizado para implementar as configurações personalizadas na rede.
