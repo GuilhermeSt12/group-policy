@@ -47,7 +47,7 @@ cmd /c msiexec /a "C:\Temp\Reader\AcroRead.msi" TARGETDIR="C:\Temp\Reader_deploy
 Para garantir que a instalação esteja sempre atualizada, aplique as atualizações mais recentes ao ponto de instalação:
 
 ```bash
-cmd /c msiexec /a "C:\Temp\Reader_deployment\AcroRead.msi" /p "C:\Temp\Reader\AcroRdrDCUpd2300320269.msp" TARGETDIR="C:\Temp\Reader_deployment"
+cmd /c msiexec /a "C:\Temp\Reader_deployment\AcroRead.msi" /p "C:\Temp\Reader\AcroRdrDCUpd2400320112.msp" TARGETDIR="C:\Temp\Reader_deployment"
 ```
 
 
