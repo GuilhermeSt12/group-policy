@@ -1,20 +1,59 @@
-Documentação e Download
-============================
-Download link: [Adobe Acrobat Reader DC](https://get.adobe.com/reader/enterprise/)
+# Guia de Configuração do Adobe Acrobat Reader DC via GPO
 
-Documentação Download: [Documentação](https://www.adobe.com/devnet-docs/acrobatetk/tools/VirtualizationGuide/cmdline.html#msi-support)
+Este repositório fornece um guia passo a passo para instalar e configurar o **Adobe Acrobat Reader DC** em um ambiente corporativo usando **GPOs (Group Policy Objects)**. O processo inclui instruções sobre como baixar, extrair e personalizar a instalação do Acrobat Reader DC, com a opção de configurar parâmetros específicos via **Adobe Customization Wizard**.
+
+A seguir, você encontrará o tutorial completo, incluindo links para download e comandos necessários para preparar e implantar o software.
+
+---
+
+## **Documentação e Download**
+
+### Download do Adobe Acrobat Reader DC
+
+Baixe a versão corporativa mais recente do **Adobe Acrobat Reader DC** diretamente do site oficial:
+
+[Adobe Acrobat Reader DC](https://get.adobe.com/reader/enterprise/)
+
+### Documentação Oficial da Adobe
+
+Para mais detalhes sobre a personalização e suporte de instalação via MSI, consulte a documentação oficial:
+
+[Documentação Adobe Acrobat Reader DC](https://www.adobe.com/devnet-docs/acrobatetk/tools/VirtualizationGuide/cmdline.html#msi-support)
+
+---
+
+## **Passo a Passo para criação do Instalador via MSI**
+
+### 1. **Baixe a Versão Mais Recente**
+
+- Acesse o link de download acima e faça o download do instalador corporativo do **Adobe Acrobat Reader DC**.
+
+### 2. **Extraia o Executável para uma Nova Pasta**
+
+- Após o download, extraia o conteúdo do instalador para uma pasta específica. O comando abaixo pode ser utilizado para essa finalidade:
+
+```bash
+cmd /c D:\Downloads\AcroRdrDC2300320269_en_US.exe -sfx_o"D:\Downloads\Reader" -sfx_ne
+```
+
+### 3. Criar Ponto de Instalação Administrativa
+Após extrair o instalador, você deve criar um ponto de instalação administrativa para facilitar o gerenciamento e implantação do software:
+
+```bash
+cmd /c msiexec /a "D:\Downloads\Reader\AcroRead.msi" TARGETDIR="D:\Downloads\Reader_deployment"
+```
+
+### 4. Atualizar o Ponto de Instalação Administrativa
+Para garantir que a instalação esteja sempre atualizada, aplique as atualizações mais recentes ao ponto de instalação:
+
+```bash
+cmd /c msiexec /a "D:\Downloads\Reader_deployment\AcroRead.msi" /p "D:\Downloads\Reader\AcroRdrDCUpd2300320269.msp" TARGETDIR="D:\Downloads\Reader_deployment"
+```
 
 
-1) Baixe a versão mais recente;
-2) Extraia para uma nova pasta do executável;
-3) (OPCIONAL) Instale "1-CustWiz2200320310_en_US_DC.exe" para configurar opções específicas a serem aplicadas via GPO;
-4) Crie a GPO usando o arquivo MSI extraído acima usando as configurações personalizadas que você criou com o Custow Wizard acima (este último, opcional);
+### ** (Opcional) Personalize as Opções de Instalação via Customization Wizard
+Se desejar aplicar configurações específicas, instale o Adobe Customization Wizard. Ele permite personalizar diversas opções antes da implantação via GPO.
+Use o Customization Wizard para desativar atualizações automáticas, configurar políticas de segurança, entre outras opções.
 
-Extract MSI files
-> cmd /c D:\Downloads\AcroRdrDC2300320269_en_US.exe -sfx_o"D:\Downloads\Reader" -sfx_ne
-
-Create administrative installation point
-> cmd /c msiexec /a "D:\Downloads\Reader\AcroRead.msi" TARGETDIR="D:\Downloads\Reader_deployment"
-
-Update administrative installation point
-> cmd /c msiexec /a "D:\Downloads\Reader_deployment\AcroRead.msi" /p "D:\Downloads\Reader\AcroRdrDCUpd2300320269.msp" TARGETDIR="D:\Downloads\Reader_deployment"
+### 5. Crie a GPO Usando o Arquivo MSI Extraído
+Com as configurações personalizadas criadas no Customization Wizard (caso tenha utilizado), prossiga para a criação da GPO usando o arquivo MSI extraído. O arquivo MSI será utilizado para implementar as configurações personalizadas na rede.
